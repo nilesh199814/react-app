@@ -9,8 +9,6 @@ export default function ImgUpload() {
   }
 
   function uploadImgHandler() {
-    console.log('img=>', img);
-    console.log('img w=>', img.width);
     let fromData = new FormData();
     fromData.append('file', img);
     // checking img width and height
@@ -21,9 +19,18 @@ export default function ImgUpload() {
       image.src = e.target.result;
       image.onload = () => {
         const { height, width } = image;
+        setImg(null);
         console.log('height=>', height);
+        console.log('width=>', width);
+        alert('uploaded successfully.');
+        resetHandler();
       };
     };
+  }
+
+  function resetHandler() {
+    const file = document.getElementById('myfile');
+    file.value = '';
   }
 
   // Request made to the backend api
@@ -39,6 +46,7 @@ export default function ImgUpload() {
       />
       <br /> <br />
       <button onClick={uploadImgHandler}>Upload</button>
+      <button onClick={resetHandler}>Reset</button>
     </div>
   );
 }
