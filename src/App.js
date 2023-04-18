@@ -7,7 +7,7 @@ export default function App() {
   return (
     <>
       <h1>Hello StackBlitz!</h1>
-      <ImgUpload />
+      {/* <ImgUpload /> */}
       {/* <UserList /> */}
     </>
   );
