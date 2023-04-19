@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from './reducers/counter/counterSlice';
+import { reducers } from './reducers/index';
+import thunk from 'redux-thunk';
 
 export default configureStore({
-  reducer: {
-    counter: counterReducer,
-  },
+  reducer: reducers,
+  middleware: [thunk],
 });

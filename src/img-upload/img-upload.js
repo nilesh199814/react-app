@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 export default function ImgUpload() {
   const count = useSelector((state) => state.counter.value);
+  const userProfile = useSelector((state) => state);
   // =============testing img handling==================
   let [img, setImg] = useState(null);
   function imgHandler(e) {
@@ -32,6 +33,7 @@ export default function ImgUpload() {
 
   function resetHandler() {
     console.log('count=>', count);
+    console.log('userProfile=>', userProfile);
     const file = document.getElementById('myfile');
     file.value = '';
   }
